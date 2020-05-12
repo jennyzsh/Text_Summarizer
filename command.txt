@@ -1,0 +1,7 @@
+Tensorboard:
+tensorboard --logdir pretrained_model_tf1.2.1/train
+
+
+
+Decode:
+python run_summarization.py --mode=decode --data_path=finished_files/test.bin --vocab_path=finished_files/vocab --exp_name=pretrained_model_tf1.2.1 --coverage=1 --single_pass=
