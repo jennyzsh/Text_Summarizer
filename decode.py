@@ -102,6 +102,9 @@ class BeamSearchDecoder(object):
       output_ids = [int(t) for t in best_hyp.tokens[1:]]
       decoded_words = data.outputids2words(output_ids, self._vocab, (batch.art_oovs[0] if FLAGS.pointer_gen else None))
 
+      print(len(decoded_words))
+      print('decoded word is {}'.format(decoded_words))
+
       # Remove the [STOP] token from decoded_words, if necessary
       try:
         fst_stop_idx = decoded_words.index(data.STOP_DECODING) # index of the (first) [STOP] symbol
